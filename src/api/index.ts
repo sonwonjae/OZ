@@ -10,8 +10,8 @@ const HEADERS = {
   pragma: 'no-cache',
 };
 
-const createAxios = (): AxiosInstance => {
-  return axios.create({ baseURL: `${BASE_URL}/api/v1`, headers: HEADERS });
+const createAxios = (version = 1): AxiosInstance => {
+  return axios.create({ baseURL: `${BASE_URL}/api/v${version}`, headers: HEADERS });
 };
 
 const createAxiosWithToken = (): AxiosInstance => {
@@ -31,6 +31,7 @@ const createAxiosWithTokenInUpload = (): AxiosInstance => {
 
 // No token
 export const axiosService = createAxios();
+export const axiosServiceV2 = createAxios(2);
 
 // With token
 export const axiosWithToken = createAxiosWithToken();
