@@ -9,7 +9,7 @@ export function interceptors(requestHTTP: AxiosInstance) {
       const accessToken = localStorage.getItem('accessToken');
 
       if (config.headers) {
-        // config.headers.Authorization = `Bearer ${accessToken}`;
+        config.headers.Authorization = `Bearer ${accessToken}`;
         config.headers.guest = config.headers.guest || !accessToken;
         return config;
       }
