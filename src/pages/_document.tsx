@@ -43,6 +43,9 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="ko_KR" />
           <meta property="og:site_name" content="OZ" />
+
+          {/* HTTP 보안 설정 */}
+          <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         </Head>
         <body>
           <Main />
