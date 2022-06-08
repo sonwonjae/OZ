@@ -11,11 +11,11 @@ const HEADERS = {
 };
 
 const createAxios = (version = 1): AxiosInstance => {
-  return axios.create({ baseURL: `${BASE_URL}/api/v${version}`, headers: HEADERS });
+  return axios.create({ baseURL: `${BASE_URL}/api/v${version}`, headers: HEADERS, withCredentials: true });
 };
 
 const createAxiosWithToken = (): AxiosInstance => {
-  const requestHTTP = axios.create({ baseURL: `${BASE_URL}/api/v1`, headers: HEADERS });
+  const requestHTTP = axios.create({ baseURL: `${BASE_URL}/api/v1`, headers: HEADERS, withCredentials: true });
 
   return interceptors(requestHTTP);
 };

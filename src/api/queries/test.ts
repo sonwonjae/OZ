@@ -11,7 +11,9 @@ const fetchLogin = async (reqData: LoginRequestDataType) => {
   const res = await axiosServiceV2.post(`/users/login`, reqData, {
     withCredentials: true,
   });
+
   console.log({ res });
+  console.log({ setCookie: res.headers['set-cookie'] });
   return res;
 };
 export const useLoginMutation = (
